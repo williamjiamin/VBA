@@ -1,4 +1,9 @@
 Sub SelectSingleCell()
+   '以下这个sub里面的方法，本质上都是模拟普通操作，先进行选中，后进行value输入
+   
+    '先激活/选中某一个工作簿（如果工作簿已经储存了，需要写上后缀）
+    Workbooks("工作簿2.xlsx").Activate
+    
     '先激活/选中某一个sheet
     
     Worksheets("Sheet1").Activate
@@ -44,3 +49,32 @@ Sub SelectSingleCell()
     
     
 End Sub
+
+
+Sub InputValueWithoutSelecting()
+        Range("A3").Value = 2
+        Range("B3").Value = "防护服"
+        Range("C3").Value = 888
+        Range("D3").Value = "进口"
+        Range("E3").Value = #8/18/2020#
+End Sub
+
+
+Sub InputValueWithoutSelecting_V2()
+        Workbooks("工作簿3").Worksheets("Sheet1").Range("A3").Value = 2
+        Workbooks("工作簿3").Worksheets("Sheet1").Range("B3").Value = "防护服"
+        Workbooks("工作簿3").Worksheets("Sheet1").Range("C3").Value = 888
+        Workbooks("工作簿3").Worksheets("Sheet1").Range("D3").Value = "进口"
+        Workbooks("工作簿3").Worksheets("Sheet1").Range("E3").Value = #8/18/2020#
+End Sub
+
+
+
+
+
+
+
+
+
+
+
