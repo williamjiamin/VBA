@@ -16,6 +16,32 @@ End Sub
 
 '逐一关闭正在进行的workbook
 Sub close_activated_workbook()
-    ActivateWorkbook.Close
-    ActivateWorkbook.Close True
+    ActiveWorkbook.Close
+    'ActiveWorkbook.Close True
 End Sub
+
+'创建/打开一个全新的workbook
+
+Sub open_a_new_workbook()
+    Workbooks.Add
+End Sub
+
+
+'特定路径的workbook打开
+
+Sub open_workbook_by_dir()
+    Workbooks.Open "C:\Users\yons\Desktop\aaa_test001.xlsx"
+End Sub
+
+
+
+'xlsx为excel的默认类型
+'https://docs.microsoft.com/zh-cn/office/vba/api/overview/
+
+Sub change_file_type()
+    Workbooks.Add
+    'ActiveWorkbook.Close
+    'mov->m4v
+    ActiveWorkbook.SaveAs "C:\Users\yons\Desktop\lexueoude.xlsm", xlOpenXMLWorkbookMacroEnabled
+End Sub
+
